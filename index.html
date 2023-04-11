@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+        .column {
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            gap: 0.5rem;
+        }
+        .row {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .container {
+            width: 100%;
+            display: flex;
+            gap: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="column">
+        <canvas id="canvas" width="500" height="500"></canvas>
+        <div class="row">
+            <span>Mode</span>
+            <div>
+                <input type="radio" id="mode1" name="mode" value="1" checked>
+                <label for="mode1">1</label>
+            </div>
+            <div>
+                <input type="radio" id="mode2" name="mode" value="2">
+                <label for="mode2">2</label>
+            </div>
+        </div>
+        <div class="row" id="row1">
+            <label for="argument">Argument</label>
+            <input type="text" id="argument">
+        </div>
+        <div class="row" id="row2">
+            <label for="fileInput">File</label>
+            <input type="file" id="fileInput">
+
+            <span>Function</span>
+            <div>
+                <input type="radio" id="sin" name="funcPicker" value="sin" checked>
+                <label for="sin">Sin</label>
+            </div>
+            <div>
+                <input type="radio" id="abs" name="funcPicker" value="abs">
+                <label for="abs">Abs</label>
+            </div>
+            <div>
+                <input type="radio" id="e" name="funcPicker" value="e">
+                <label for="e">E</label>
+            </div>
+            <div>
+                <input type="radio" id="1x" name="funcPicker" value="1x">
+                <label for="1x">1 / x</label>
+            </div>
+            <div>
+                <label for="maxArg">|x| <=</label>
+                <input type="text" id="maxArg">
+            </div>
+        </div>
+        <button id="run">Run</button>
+    </div>
+    <div class="column">
+        <label for="resultsArea">Results</label>
+        <textarea id="resultsArea" readonly></textarea>
+    </div>
+    </div>
+    <script type="application/javascript" src="script.js"></script>
+</body>
+</html>
